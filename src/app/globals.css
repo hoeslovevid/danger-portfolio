@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050506;
+  --foreground: #eceef2;
+}
+
+@theme inline {
+  --color-ink: #050506;
+  --color-ink-2: #0b0b0e;
+  --color-panel: #121218;
+  --color-danger: #e11d2e;
+  --color-danger-dim: #9f1420;
+  --color-mute: #8b919d;
+  --color-text: #eceef2;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--color-ink);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-danger) 45%, transparent);
+    color: white;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-danger);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  /* Scales "Danger!" to fit narrow phones without clipping; stays large on desktop */
+  .hero-title {
+    font-size: clamp(2.6rem, 0.2rem + 10.5vw, 8.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    max-width: 100%;
+    overflow-wrap: normal;
+    word-break: keep-all;
+  }
+
+  @media (max-width: 380px) {
+    .hero-title {
+      font-size: clamp(2.4rem, 11.2vw, 3.25rem);
+      letter-spacing: -0.035em;
+    }
+  }
+
+  @keyframes hero-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-fade {
+    animation: hero-fade-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero-fade-delay-1 { animation-delay: 80ms; }
+  .hero-fade-delay-2 { animation-delay: 160ms; }
+  .hero-fade-delay-3 { animation-delay: 240ms; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-fade {
+      animation: none;
+    }
+  }
+
+  .glass {
+    background: color-mix(in oklab, #121218 72%, transparent);
+    border: 1px solid color-mix(in oklab, white 10%, transparent);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 0 1px color-mix(in oklab, black 40%, transparent) inset;
+  }
+
+  .cinematic-grain {
+    background-image:
+      radial-gradient(circle at 20% 20%, color-mix(in oklab, white 4%, transparent) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 80% 40%, color-mix(in oklab, white 3%, transparent) 0 1px, transparent 1.5px);
+    background-size: 3px 3px, 4px 4px;
+  }
+
+  .grid-fade {
+    background-image:
+      linear-gradient(color-mix(in oklab, white 6%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in oklab, white 6%, transparent) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 55% at 50% 25%, black, transparent);
+  }
+}
