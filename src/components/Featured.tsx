@@ -5,9 +5,7 @@ import { Reveal } from './Reveal'
 
 function FeaturedCard({ project, index }: { project: Project; index: number }) {
   const n = String(index + 1).padStart(2, '0')
-  const displayName = project.title
-    ? `${project.name}`
-    : project.name
+  const headline = project.title ?? project.name
 
   return (
     <Reveal delay={index * 0.08}>
@@ -28,11 +26,11 @@ function FeaturedCard({ project, index }: { project: Project; index: number }) {
 
         <div className="mt-6">
           <h3 className="font-display text-2xl font-bold tracking-tight text-text transition-colors group-hover:text-danger md:text-3xl">
-            {displayName}
+            {headline}
           </h3>
           {project.title && (
-            <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-danger">
-              {project.title}
+            <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-mute">
+              {project.name}
             </p>
           )}
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-mute md:text-base">
@@ -95,7 +93,7 @@ export function Featured() {
               Deep work
             </h2>
             <p className="max-w-xs font-mono text-[12px] leading-relaxed text-mute md:text-right">
-              Flagship builds — overlays, a privacy browser, and live chat automation.
+              VoidLens, Vesper, and CowBot — the flagship three.
             </p>
           </div>
         </Reveal>

@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion } from 'framer-motion'
+import { profile } from '@/data/projects'
 
 export function Hero() {
   const reduce = useReducedMotion()
@@ -43,8 +44,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
           >
-            Desktop systems, privacy browsers, and clan infrastructure — tools built for play,
-            community, and control.
+            {profile.tagline}
           </motion.p>
 
           <motion.div

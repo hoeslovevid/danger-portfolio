@@ -21,9 +21,16 @@ function ProjectCard({ project }: { project: Project }) {
       className="glass group flex h-full flex-col p-5 md:p-6"
     >
       <div className="flex items-start justify-between gap-3">
-        <h3 className="font-display text-xl font-bold tracking-tight text-text transition-colors group-hover:text-danger">
-          {project.name}
-        </h3>
+        <div className="min-w-0">
+          <h3 className="font-display text-xl font-bold tracking-tight text-text transition-colors group-hover:text-danger">
+            {project.title ?? project.name}
+          </h3>
+          {project.title && (
+            <p className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-mute">
+              {project.name}
+            </p>
+          )}
+        </div>
         <span className="shrink-0 font-mono text-[10px] uppercase tracking-[0.14em] text-mute">
           {project.language}
         </span>

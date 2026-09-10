@@ -21,8 +21,7 @@ export const projects: Project[] = [
     id: 'everything-warframe',
     name: 'everything-warframe',
     title: 'VoidLens',
-    blurb:
-      'Warframe companion and transparent overlay for Windows and Linux/Proton — worldstate, Baro, inventory sync, relic and riven OCR.',
+    blurb: 'Warframe overlay for worldstate, Baro, inventory sync, relic scanning.',
     language: 'TypeScript',
     tags: ['Warframe'],
     tech: ['Desktop', 'Overlay', 'OCR'],
@@ -34,8 +33,8 @@ export const projects: Project[] = [
   {
     id: 'vesper-browser',
     name: 'vesper-browser',
-    blurb:
-      'Privacy-first Firefox fork with Zen-class chrome — vertical tabs, workspaces, split view, and hardened defaults.',
+    title: 'Vesper',
+    blurb: 'Privacy-first Firefox fork with Zen-class chrome.',
     language: 'JavaScript',
     tags: ['Browser'],
     tech: ['Privacy', 'Firefox'],
@@ -47,8 +46,7 @@ export const projects: Project[] = [
   {
     id: 'CowBot',
     name: 'CowBot',
-    blurb:
-      'Twitch giveaway and gambling chat bot built for live community streams.',
+    blurb: 'Twitch giveaway + gambling chat bot.',
     language: 'Python',
     tags: ['Bots'],
     tech: ['Twitch', 'Community'],
@@ -57,30 +55,29 @@ export const projects: Project[] = [
     featuredOrder: 3,
   },
   {
-    id: 'wfclanrecruit',
-    name: 'wfclanrecruit',
-    blurb:
-      'Recruitment board for Warframe clans and alliances — match players with the right groups.',
-    language: 'JavaScript',
-    tags: ['Warframe', 'Web'],
-    tech: ['Recruitment'],
-    repo: 'https://github.com/hoeslovevid/wfclanrecruit',
-  },
-  {
     id: 'Tiles-R-Us',
     name: 'Tiles-R-Us',
-    blurb:
-      'Tile grader for Warframe Disruption and Survival — score layouts before you commit.',
+    title: 'Tiles R Us',
+    blurb: 'Disruption/Survival tile grader.',
     language: 'Python',
     tags: ['Warframe'],
     tech: ['Tooling', 'Grading'],
     repo: 'https://github.com/hoeslovevid/Tiles-R-Us',
   },
   {
+    id: 'wfclanrecruit',
+    name: 'wfclanrecruit',
+    title: 'WF Clan Recruit',
+    blurb: 'Clan/alliance recruitment board.',
+    language: 'JavaScript',
+    tags: ['Warframe', 'Web'],
+    tech: ['Recruitment'],
+    repo: 'https://github.com/hoeslovevid/wfclanrecruit',
+  },
+  {
     id: 'obsidian-clanbot',
     name: 'obsidian-clanbot',
-    blurb:
-      'Discord bot for the Obsidian Warframe clan — ops, roles, and workflows on Railway.',
+    blurb: 'Discord bot for the Obsidian Warframe clan.',
     language: 'Python',
     tags: ['Warframe', 'Bots'],
     tech: ['Discord', 'Railway'],
@@ -89,8 +86,7 @@ export const projects: Project[] = [
   {
     id: 'obsidian-clan-website',
     name: 'obsidian-clan-website',
-    blurb:
-      'Public-facing website for the Obsidian clan — identity, presence, and clan info.',
+    blurb: 'Community stack — clan site.',
     language: 'CSS',
     tags: ['Web', 'Warframe'],
     tech: ['Clan', 'Design'],
@@ -99,8 +95,7 @@ export const projects: Project[] = [
   {
     id: 'obsidian-overseer-website',
     name: 'obsidian-overseer-website',
-    blurb:
-      'Overseer dashboard site for Obsidian leadership — status and clan oversight surfaces.',
+    blurb: 'Community stack — overseer.',
     language: 'HTML',
     tags: ['Web', 'Warframe'],
     tech: ['Clan', 'Ops'],
@@ -109,8 +104,7 @@ export const projects: Project[] = [
   {
     id: 'clan-events-website',
     name: 'clan-events-website',
-    blurb:
-      'Events site for clan activities — schedules, announcements, and community drops.',
+    blurb: 'Community stack — events.',
     language: 'CSS',
     tags: ['Web', 'Warframe'],
     tech: ['Events', 'Community'],
@@ -126,7 +120,7 @@ export const profile = {
   name: 'Danger!',
   handle: 'hoeslovevid',
   github: 'https://github.com/hoeslovevid',
-  tagline: 'Desktop systems, privacy browsers, and clan infrastructure.',
+  tagline: 'Desktop tools, community platforms, and automation.',
   about:
     'I build tools that sit close to the metal of community and play — transparent game overlays, privacy-first browsers, Twitch bots, and the Discord/web stack that keeps a Warframe clan running. Sharp engineering with a creative edge.',
 }
