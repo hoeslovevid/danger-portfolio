@@ -1,49 +1,60 @@
+export type FilterTag = 'Warframe' | 'Bots' | 'Web' | 'Browser'
+
 export type Project = {
   id: string
   name: string
+  title?: string
   blurb: string
   language: string
-  tags: string[]
+  tags: FilterTag[]
+  tech?: string[]
   repo: string
   site?: string
   featured?: boolean
-  accent?: 'signal' | 'steel' | 'ember'
+  featuredOrder?: number
 }
+
+export const filterTags: FilterTag[] = ['Warframe', 'Bots', 'Web', 'Browser']
 
 export const projects: Project[] = [
   {
     id: 'everything-warframe',
     name: 'everything-warframe',
+    title: 'VoidLens',
     blurb:
-      'Warframe companion and transparent overlay (VoidLens) for Windows and Linux/Proton — worldstate, Baro, inventory sync, plus relic and riven OCR.',
+      'Warframe companion and transparent overlay for Windows and Linux/Proton — worldstate, Baro, inventory sync, relic and riven OCR.',
     language: 'TypeScript',
-    tags: ['Desktop', 'Overlay', 'OCR', 'Warframe'],
+    tags: ['Warframe'],
+    tech: ['Desktop', 'Overlay', 'OCR'],
     repo: 'https://github.com/hoeslovevid/everything-warframe',
     site: 'https://hoeslovevid.github.io/Warframe-Companion-Helper/',
     featured: true,
-    accent: 'signal',
+    featuredOrder: 1,
   },
   {
     id: 'vesper-browser',
     name: 'vesper-browser',
     blurb:
-      'Privacy-first Firefox fork with Zen-class chrome — vertical tabs, workspaces, split view, and hardened defaults out of the box.',
+      'Privacy-first Firefox fork with Zen-class chrome — vertical tabs, workspaces, split view, and hardened defaults.',
     language: 'JavaScript',
-    tags: ['Browser', 'Privacy', 'Firefox'],
+    tags: ['Browser'],
+    tech: ['Privacy', 'Firefox'],
     repo: 'https://github.com/hoeslovevid/vesper-browser',
     site: 'https://hoeslovevid.github.io/vesper-browser/',
     featured: true,
-    accent: 'steel',
+    featuredOrder: 2,
   },
   {
     id: 'CowBot',
     name: 'CowBot',
     blurb:
-      'Twitch chat bot for giveaways and gambling mechanics — built for live community streams.',
+      'Twitch giveaway and gambling chat bot built for live community streams.',
     language: 'Python',
-    tags: ['Twitch', 'Bot', 'Community'],
+    tags: ['Bots'],
+    tech: ['Twitch', 'Community'],
     repo: 'https://github.com/hoeslovevid/CowBot',
-    accent: 'ember',
+    featured: true,
+    featuredOrder: 3,
   },
   {
     id: 'wfclanrecruit',
@@ -51,25 +62,28 @@ export const projects: Project[] = [
     blurb:
       'Recruitment board for Warframe clans and alliances — match players with the right groups.',
     language: 'JavaScript',
-    tags: ['Web', 'Warframe', 'Recruitment'],
+    tags: ['Warframe', 'Web'],
+    tech: ['Recruitment'],
     repo: 'https://github.com/hoeslovevid/wfclanrecruit',
   },
   {
     id: 'Tiles-R-Us',
     name: 'Tiles-R-Us',
     blurb:
-      'Tile grader for Warframe Disruption and Survival missions — score layouts before you commit.',
+      'Tile grader for Warframe Disruption and Survival — score layouts before you commit.',
     language: 'Python',
-    tags: ['Tooling', 'Warframe', 'Grading'],
+    tags: ['Warframe'],
+    tech: ['Tooling', 'Grading'],
     repo: 'https://github.com/hoeslovevid/Tiles-R-Us',
   },
   {
     id: 'obsidian-clanbot',
     name: 'obsidian-clanbot',
     blurb:
-      'Discord bot for the Obsidian Warframe clan — ops, roles, and clan workflows on Railway.',
+      'Discord bot for the Obsidian Warframe clan — ops, roles, and workflows on Railway.',
     language: 'Python',
-    tags: ['Discord', 'Bot', 'Railway'],
+    tags: ['Warframe', 'Bots'],
+    tech: ['Discord', 'Railway'],
     repo: 'https://github.com/hoeslovevid/obsidian-clanbot',
   },
   {
@@ -78,7 +92,8 @@ export const projects: Project[] = [
     blurb:
       'Public-facing website for the Obsidian clan — identity, presence, and clan info.',
     language: 'CSS',
-    tags: ['Web', 'Clan', 'Design'],
+    tags: ['Web', 'Warframe'],
+    tech: ['Clan', 'Design'],
     repo: 'https://github.com/hoeslovevid/obsidian-clan-website',
   },
   {
@@ -87,7 +102,8 @@ export const projects: Project[] = [
     blurb:
       'Overseer dashboard site for Obsidian leadership — status and clan oversight surfaces.',
     language: 'HTML',
-    tags: ['Web', 'Clan', 'Ops'],
+    tags: ['Web', 'Warframe'],
+    tech: ['Clan', 'Ops'],
     repo: 'https://github.com/hoeslovevid/obsidian-overseer-website',
   },
   {
@@ -96,22 +112,15 @@ export const projects: Project[] = [
     blurb:
       'Events site for clan activities — schedules, announcements, and community drops.',
     language: 'CSS',
-    tags: ['Web', 'Events', 'Community'],
+    tags: ['Web', 'Warframe'],
+    tech: ['Events', 'Community'],
     repo: 'https://github.com/hoeslovevid/clan-events-website',
   },
 ]
 
-export const featuredProjects = projects.filter((p) => p.featured)
-export const gridProjects = projects.filter((p) => !p.featured)
-
-export const skills = [
-  { label: 'TypeScript / JS', detail: 'Desktop overlays, browsers, web apps' },
-  { label: 'Python', detail: 'Bots, graders, automation' },
-  { label: 'Systems UX', detail: 'Transparent overlays, OCR, live sync' },
-  { label: 'Community platforms', detail: 'Twitch, Discord, clan tooling' },
-  { label: 'Privacy tooling', detail: 'Hardened browser defaults' },
-  { label: 'Deploy & ops', detail: 'Railway, static sites, GitHub Pages' },
-]
+export const featuredProjects = projects
+  .filter((p) => p.featured)
+  .sort((a, b) => (a.featuredOrder ?? 99) - (b.featuredOrder ?? 99))
 
 export const profile = {
   name: 'Danger!',
@@ -121,3 +130,12 @@ export const profile = {
   about:
     'I build tools that sit close to the metal of community and play — transparent game overlays, privacy-first browsers, Twitch bots, and the Discord/web stack that keeps a Warframe clan running. Sharp engineering with a creative edge.',
 }
+
+export const skills = [
+  { label: 'TypeScript / JS', detail: 'Desktop overlays, browsers, web apps' },
+  { label: 'Python', detail: 'Bots, graders, automation' },
+  { label: 'Systems UX', detail: 'Transparent overlays, OCR, live sync' },
+  { label: 'Community platforms', detail: 'Twitch, Discord, clan tooling' },
+  { label: 'Privacy tooling', detail: 'Hardened browser defaults' },
+  { label: 'Deploy & ops', detail: 'Railway, static sites, GitHub Pages' },
+]

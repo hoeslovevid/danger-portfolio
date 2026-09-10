@@ -2,7 +2,13 @@
 
 Personal portfolio for **Danger!** ([@hoeslovevid](https://github.com/hoeslovevid)) — desktop systems, privacy browsers, and clan infrastructure.
 
-Built with **Vite + React + TypeScript + Tailwind CSS**. Static export ready for GitHub Pages or Vercel.
+**Stack:** Next.js (App Router) · TypeScript · Tailwind CSS · Framer Motion
+
+## IA
+
+Hero → Featured (3) → All work (filterable) → About → Contact
+
+Featured: `everything-warframe` (VoidLens), `vesper-browser`, `CowBot`. Full grid is filterable by **Warframe / Bots / Web / Browser**. This portfolio repo is not listed.
 
 ## Quick start
 
@@ -11,73 +17,34 @@ npm install
 npm run dev
 ```
 
-Open the URL Vite prints (usually `http://localhost:5173`).
+Open [http://localhost:3000](http://localhost:3000).
 
 ## Scripts
 
 | Command | Description |
 | --- | --- |
 | `npm run dev` | Local development server |
-| `npm run build` | Typecheck + production build → `dist/` |
-| `npm run build:pages` | Production build with GitHub Pages base path (`/danger-portfolio/`) |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run oxlint |
+| `npm run build` | Production build |
+| `npm run start` | Serve production build |
+| `npm run build:pages` | Same build (use `GITHUB_PAGES=true` for static export + basePath) |
+| `npm run lint` | ESLint |
 
-## Deploy
+### GitHub Pages static export
+
+```bash
+GITHUB_PAGES=true npm run build
+```
+
+Output lands in `out/`. Publish that folder (e.g. `npx gh-pages -d out`). Site:
+
+`https://hoeslovevid.github.io/danger-portfolio/`
 
 ### Vercel
 
-1. Import this repository in [Vercel](https://vercel.com).
-2. Framework preset: **Vite** (defaults are fine).
-3. Build command: `npm run build`
-4. Output directory: `dist`
-5. Deploy. Root path `/` is used by default.
+1. Import the repo in Vercel (Framework: Next.js).
+2. Build: `npm run build` · Output: default.
+3. Deploy — root path `/`.
 
-Optional: add `vercel.json` is already included for SPA-style routing (single page).
+## Content
 
-### GitHub Pages
-
-1. Build with the Pages base path:
-
-   ```bash
-   npm run build:pages
-   ```
-
-2. Publish the `dist/` folder to the `gh-pages` branch (or configure **Settings → Pages** to deploy from GitHub Actions).
-
-   Example with the `gh-pages` package:
-
-   ```bash
-   npx gh-pages -d dist
-   ```
-
-3. Site URL will be:
-
-   `https://hoeslovevid.github.io/danger-portfolio/`
-
-If the repository name changes, update `base` in `vite.config.ts` (the `GITHUB_PAGES` branch).
-
-### Manual static host
-
-```bash
-npm run build
-```
-
-Upload the contents of `dist/` to any static host (Netlify, Cloudflare Pages, S3, etc.).
-
-## Project structure
-
-```
-src/
-  components/   # Hero, About, Featured, ProjectGrid, Connect, Footer, Nav
-  data/         # Curated project + profile content
-  hooks/        # Scroll reveal helper
-  App.tsx
-  index.css     # Design tokens + motion utilities
-```
-
-Project copy lives in `src/data/projects.ts` — edit there to add or update repos.
-
-## Design notes
-
-Dark-forward hazard aesthetic: charcoal ink, signal amber accent, Syne + Sora + IBM Plex Mono. Featured builds get deep editorial panels; the archive is a responsive project list with language tags and GitHub / live links.
+Edit `src/data/projects.ts` to add or update projects, tags, and featured order.

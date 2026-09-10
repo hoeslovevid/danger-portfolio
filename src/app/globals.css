@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050506;
+  --foreground: #eceef2;
+}
+
+@theme inline {
+  --color-ink: #050506;
+  --color-ink-2: #0b0b0e;
+  --color-panel: #121218;
+  --color-danger: #e11d2e;
+  --color-danger-dim: #9f1420;
+  --color-mute: #8b919d;
+  --color-text: #eceef2;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex), ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--color-ink);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-danger) 45%, transparent);
+    color: white;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-danger);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .glass {
+    background: color-mix(in oklab, #121218 72%, transparent);
+    border: 1px solid color-mix(in oklab, white 10%, transparent);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 0 1px color-mix(in oklab, black 40%, transparent) inset;
+  }
+
+  .cinematic-grain {
+    background-image:
+      radial-gradient(circle at 20% 20%, color-mix(in oklab, white 4%, transparent) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 80% 40%, color-mix(in oklab, white 3%, transparent) 0 1px, transparent 1.5px);
+    background-size: 3px 3px, 4px 4px;
+  }
+
+  .grid-fade {
+    background-image:
+      linear-gradient(color-mix(in oklab, white 6%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in oklab, white 6%, transparent) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 55% at 50% 25%, black, transparent);
+  }
+}
