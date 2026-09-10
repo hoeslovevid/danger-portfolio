@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-[100svh] flex-col justify-end pb-16 pt-28 md:pb-24 md:pt-32"
+      className="relative isolate flex min-h-[100svh] flex-col justify-center pb-16 pt-28 md:justify-end md:pb-24 md:pt-32"
     >
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_55%_at_65%_10%,color-mix(in_oklab,var(--color-danger)_22%,transparent),transparent_55%),radial-gradient(ellipse_50%_45%_at_15%_85%,color-mix(in_oklab,#3a1018_80%,transparent),transparent_55%),linear-gradient(180deg,#050506_0%,#0a0a0c_50%,#050506_100%)]" />
