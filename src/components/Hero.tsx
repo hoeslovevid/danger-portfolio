@@ -1,11 +1,8 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
 import { profile } from '@/data/projects'
 
 export function Hero() {
-  const reduce = useReducedMotion()
-
   return (
     <section
       id="top"
@@ -19,40 +16,20 @@ export function Hero() {
       </div>
 
       <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
-        <motion.p
-          className="font-mono text-[11px] uppercase tracking-[0.28em] text-danger"
-          initial={reduce ? false : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
+        <p className="hero-fade font-mono text-[11px] uppercase tracking-[0.28em] text-danger">
           Engineer · Builder · hoeslovevid
-        </motion.p>
+        </p>
 
-        <motion.h1
-          className="hero-title mt-5 max-w-full font-display font-bold text-text"
-          initial={reduce ? false : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-        >
+        <h1 className="hero-title hero-fade hero-fade-delay-1 mt-5 max-w-full font-display font-bold text-text">
           Danger<span className="text-danger">!</span>
-        </motion.h1>
+        </h1>
 
         <div className="mt-8 flex max-w-2xl flex-col gap-6 md:mt-10 md:flex-row md:items-end md:justify-between md:gap-12">
-          <motion.p
-            className="text-lg leading-relaxed text-mute md:text-xl"
-            initial={reduce ? false : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.35 }}
-          >
+          <p className="hero-fade hero-fade-delay-2 text-lg leading-relaxed text-mute md:text-xl">
             {profile.tagline}
-          </motion.p>
+          </p>
 
-          <motion.div
-            className="flex shrink-0 flex-wrap gap-3"
-            initial={reduce ? false : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.45 }}
-          >
+          <div className="hero-fade hero-fade-delay-3 flex shrink-0 flex-wrap gap-3">
             <a
               href="#featured"
               className="inline-flex items-center bg-danger px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-white transition-transform hover:-translate-y-0.5"
@@ -65,7 +42,7 @@ export function Hero() {
             >
               Contact
             </a>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
