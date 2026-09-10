@@ -29,10 +29,10 @@ export function Hero() {
         </motion.p>
 
         <motion.h1
-          className="mt-5 font-display text-[clamp(4.25rem,17vw,10.5rem)] font-extrabold leading-[0.82] tracking-[-0.05em] text-text"
-          initial={reduce ? false : { opacity: 0, y: 24, letterSpacing: '0.2em' }}
-          animate={{ opacity: 1, y: 0, letterSpacing: '-0.05em' }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+          className="mt-5 font-display text-[clamp(3.75rem,14vw,8.5rem)] font-bold leading-[0.9] tracking-[-0.03em] text-text"
+          initial={reduce ? false : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
         >
           Danger<span className="text-danger">!</span>
         </motion.h1>

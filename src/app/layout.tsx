@@ -1,22 +1,16 @@
 import type { Metadata } from 'next'
-import { IBM_Plex_Mono, Sora, Syne } from 'next/font/google'
+import { IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google'
 import './globals.css'
 
-const syne = Syne({
+const plexSans = IBM_Plex_Sans({
   subsets: ['latin'],
-  variable: '--font-syne',
-  weight: ['600', '700', '800'],
+  variable: '--font-plex-sans',
+  weight: ['400', '500', '600', '700'],
 })
 
-const sora = Sora({
+const plexMono = IBM_Plex_Mono({
   subsets: ['latin'],
-  variable: '--font-sora',
-  weight: ['400', '500', '600'],
-})
-
-const plex = IBM_Plex_Mono({
-  subsets: ['latin'],
-  variable: '--font-plex',
+  variable: '--font-plex-mono',
   weight: ['400', '500', '600'],
 })
 
@@ -42,8 +36,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${syne.variable} ${sora.variable} ${plex.variable}`}>
-      <body className="min-h-svh bg-ink text-text antialiased">{children}</body>
+    <html lang="en" className={`${plexSans.variable} ${plexMono.variable}`}>
+      <body className="min-h-svh bg-ink font-sans text-text antialiased">{children}</body>
     </html>
   )
 }

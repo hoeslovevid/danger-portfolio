@@ -16,7 +16,7 @@ export function Nav() {
             aria-hidden
             className="inline-block size-2.5 rotate-45 bg-danger shadow-[0_0_16px_color-mix(in_oklab,var(--color-danger)_50%,transparent)] transition-transform group-hover:scale-110"
           />
-          <span className="font-display text-lg font-extrabold tracking-tight text-text md:text-xl">
+          <span className="font-display text-lg font-semibold tracking-tight text-text md:text-xl">
             Danger<span className="text-danger">!</span>
           </span>
         </a>

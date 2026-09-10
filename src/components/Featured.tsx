@@ -16,7 +16,7 @@ function FeaturedCard({ project, index }: { project: Project; index: number }) {
         />
 
         <div className="flex flex-wrap items-start justify-between gap-4">
-          <span className="font-display text-5xl font-extrabold tracking-tighter text-danger/90 md:text-6xl">
+          <span className="font-display text-5xl font-semibold tracking-tight text-danger/90 md:text-6xl">
             {n}
           </span>
           <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-mute">
