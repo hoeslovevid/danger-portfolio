@@ -57,6 +57,15 @@
     font-family: var(--font-display);
   }
 
+  /* Scales "Danger!" to fit narrow phones without clipping; stays large on desktop */
+  .hero-title {
+    font-size: clamp(2.75rem, 0.35rem + 11.5vw, 8.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    overflow-wrap: normal;
+    word-break: keep-all;
+  }
+
   .glass {
     background: color-mix(in oklab, #121218 72%, transparent);
     border: 1px solid color-mix(in oklab, white 10%, transparent);

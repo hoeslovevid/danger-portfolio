@@ -26,7 +26,8 @@ export const projects: Project[] = [
     tags: ['Warframe'],
     tech: ['Desktop', 'Overlay', 'OCR'],
     repo: 'https://github.com/hoeslovevid/everything-warframe',
-    site: 'https://hoeslovevid.github.io/Warframe-Companion-Helper/',
+    // Live Pages site for this repo (Warframe-Companion-Helper path 404s)
+    site: 'https://hoeslovevid.github.io/everything-warframe/',
     featured: true,
     featuredOrder: 1,
   },
